@@ -13,7 +13,7 @@ require("dotenv").config();
 
 const port = normalizePort(process.env.PORT || '5050');
 app.set('port', port);
-
+ console.log(`el servidor esta funcionando en http://localhost:${port}`)
 /**
  * Create HTTP server.
  */
