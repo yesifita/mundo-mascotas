@@ -2,14 +2,13 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const session=require('express-session');
-
-
+const session = require("express-session");
 
 const indexRouter = require("./routes/index");
 const usuariosRouter = require("./routes/usuarios");
 const productosRoutes = require("./routes/productos");
 const asesoriasRoutes = require("./routes/asesorias");
+const axiosRoutes = require("./routes/axios");
 
 const app = express();
 
@@ -25,11 +24,14 @@ app.use("/", indexRouter);
 app.use("/usuarios", usuariosRouter);
 app.use("/productos", productosRoutes);
 app.use("/asesorias", asesoriasRoutes);
-app.use(session({
+app.use(
+  session({
     secret: "pass",
-    resave:true,
-    saveUninitialized:true
-}))
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use("/axios", axiosRoutes);
 connect();
 
 module.exports = app;
