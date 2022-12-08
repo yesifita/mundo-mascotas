@@ -7,13 +7,13 @@ const crearUsuario = async (req, res) => {
     const err = validationResult(req);
     if (err.isEmpty()) {
       let salt = bcrypt.genSaltSync(10);
-      let hash = bcrypt.hashSync(req.body.contraseña, salt);
+      let hash = bcrypt.hashSync(req.body.pass, salt);
 
       const usuario = {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         correo: req.body.correo,
-        contraseña: hash,
+        pass: hash,
       };
       const nuevoUsuario = new Usuario(usuario);
       await nuevoUsuario.save();

@@ -13,6 +13,6 @@ router.get('/', function(req, res, next) {
 /*GET sesion. */
 router.get('/sesion',crearSesion);
 router.get('/consultar',validarUsuario,consultarSesion);
-router.get('/cerrar',cerrarSesion);
+router.delete('/cerrar',cerrarSesion);
 
 module.exports = router;

@@ -6,7 +6,6 @@ const productoSchema = new Schema({
   codigo: {
     type: Number,
     required: true,
-    unique: true,
   },
   marca: {
     type: String,
@@ -24,9 +23,9 @@ const productoSchema = new Schema({
     type: String,
     required: false,
   },
-  medidas:{
-    type:Number,
-    required: false
+  medidas: {
+    type: Number,
+    required: false,
   },
   estaEnOferta: {
     type: Boolean,

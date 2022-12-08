@@ -1,13 +1,14 @@
+
 const crearSesion = async (req, res) => {
   let persona = {
     nombre: "yesica",
     correo: "yesifita@gmail.com",
-    contraseña: "yesi123",
+    pass: "yesi123",
   }
-  req.session.usuario = persona;
-  res.json(req.session.usuario);
+  console.log(persona)
+  req.session = persona;
+  res.json(req.session);
 };
-
 const consultarSesion = async (req, res) => {
   res.json(req.session);
 };
